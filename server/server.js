@@ -25,6 +25,14 @@ todo.save().then((doc)=>{
 });
 });
 
+app.get('/todos',(req,res) => {
+  Todo.find().then((todos) => {
+    res.send({todos}); // ES6 syntax todos='todos' unstead of (todos)
+  }, (e) => {
+    res.status(400).send(e);
+  });
+});
+
 
 
 app.listen(3000,()=>{

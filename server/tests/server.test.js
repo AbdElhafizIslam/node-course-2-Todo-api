@@ -4,7 +4,7 @@ const request = require('supertest');
 const{app}=require('./../server'); //ES6 destructuring
 const {Todo}=require('./../models/todo');
 
-beforeEach((done) => {
+ beforeEach((done) => {
   Todo.deleteMany({}).then(() => done());
 });
 
@@ -49,7 +49,7 @@ describe('POST /todos',()=>{
       }
 
 
-      Todo.find().then((todos)=>{
+      Todo.find().then((todo)=>{
         expect(todos.length).toBe(0);
         done();
 
