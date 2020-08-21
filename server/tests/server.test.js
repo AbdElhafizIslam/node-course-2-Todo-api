@@ -42,7 +42,7 @@ describe('POST /todos',()=>{
         return done(err);
                 }
 
-      Todo.find({text}).then((todos) => { // text ='text'
+      Todo.find({text}).then((todos) => { // text ='text' ES6
         expect(todos.length).toBe(1);
         expect(todos[0].text).toBe(text);
         done();
